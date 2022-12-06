@@ -51,3 +51,5 @@ do while loop runs at least once
 this is to test git
 
 after making the repo you add again commit again then push
+
+git clone downloads the folder from the git url
