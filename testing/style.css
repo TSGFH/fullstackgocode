@@ -1,0 +1,24 @@
+*{
+    text-decoration: none;
+    font-family: open sans,sans-serif;
+    list-style-type: none;
+}
+a{ 
+    color: white;
+} 
+li{
+    background-color: cyan;
+    text-indent: 10px;
+  }
+li:hover{
+    background-color: transparent;
+  }
+  .test{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+  }
+  .diag{
+    display: flex;
+    flex-direction: row;
+  }

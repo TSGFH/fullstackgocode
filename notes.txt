@@ -1,0 +1,49 @@
+ctrl shift p
+^ auto save on focus change
+
+console.log('hello world');
+
+let myName = 'boris'; //cant change
+myName = 'dsa'
+
+let myName2 = 'bob'; //can change
+myName2 = 'superman'
+
+you can assing a value after the initial assgiment
+
+let myName2;
+
+myName2 = 23;
+
+a while loop must always have its condition changed inside of it or else it will be an endless loop
+
+a for loop is assigned inside of its brackets
+
+do while loop runs at least once
+
+// for(let i = 1; i < 11; i++){
+//     console.log(i*9)
+// }
+
+// for( let i = 0; i <= 90; i = i+=10){
+//     let line = '';
+
+//     for(let j = 1; j <= 10; j++){
+//         line += i+j + ' ' + '\t'
+//     }
+//     console.log(line)
+// }
+
+// let x =50
+
+// while(x>0){ 
+//     console.log(x);
+//     x--;
+// }
+
+// let y = 0;
+
+// do{
+//     console.log(y);
+//     y++;
+// }while(y > 5)

@@ -1,0 +1,89 @@
+.flex1{
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://www.cybintsolutions.com/wp-content/uploads/2018/12/The-Scary-Truth-About-Cyber-Secuirty-Facts-and-Stats-min-e1555455893148.jpg");
+    text-align: center;
+    color: white;
+}
+
+.flex2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.flex3{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.flex4{
+    background-color: gray;
+    padding: 20px;
+}
+
+.flex5{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.flex6{
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.flex7{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.flex7 > div{
+    width: 1000px;
+}
+
+.flex8{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+}
+
+.flex9{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.bestbtn{
+    margin: 50px;
+    border: 10px;
+    padding: 5px;
+}
+.someborder{
+    border: 10px solid transparent;
+}
+
+@media screen and (max-width:412px){
+    .flex3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    }
+}
+
+@media screen and (max-width:540px){
+    .flex3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    }
+}

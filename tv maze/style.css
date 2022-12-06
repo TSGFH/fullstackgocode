@@ -1,0 +1,133 @@
+*{
+    padding: 1px;
+    margin: 1px;
+    text-decoration: none;
+    font-family: open sans,sans-serif;
+    list-style-type: none;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+  li{
+    background-color: cyan;
+    text-indent: 10px;
+  }
+li:hover{
+    background-color: transparent;
+  }
+.veryhead{
+    background-color: gray;
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.toppartheader{
+    display: flex;
+    justify-content: left;
+}
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 27px;
+}
+
+
+.bothead:hover > button{
+    background-color: transparent;
+}
+.location{
+    background-color: beige;
+}
+.adalgiment{
+    display: flex;
+    justify-content: space-evenly;
+}
+.showsandfilters{
+    display: flex;
+    justify-content: space-evenly;
+}
+.selectors{
+    display: flex;
+    flex-direction: column;
+}
+.aligntheheartsandstars{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+}
+.alignthecards{
+    display: flex;
+    flex-direction: row;
+
+}
+.hearleft{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: 150px;
+    top: 50px;
+    border-radius: 75%;
+}
+.heartright{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: 175px;
+    top: 50px;
+    border-radius: 75%;
+}
+.squere{
+    background-color: red;
+    width: 49px;
+    height: 49px;
+    position: fixed;
+    left: 162.5px;
+    top: 62.5px;
+    transform: rotate(45deg);
+}
+.fixit{
+    display: flex;
+    flex-direction: column;
+}
+.centertheimage{
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.smallguy{
+    display: flex;
+    flex-direction: column;
+}
+.socialneetworks{
+    display: flex;
+    flex-direction: column;
+}
+.devided{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    background-color: cyan;
+    border-radius: 27px;
+}
