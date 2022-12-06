@@ -57,3 +57,5 @@ git clone downloads the folder from the git url
 test
 
 nice test eden
+
+in order to recive changes from a contributer you need to "git pull"
