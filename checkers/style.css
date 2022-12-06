@@ -1,4 +1,6 @@
-
+body{
+  background-color: pink;
+}
 .chessboard{
     border: 2px solid black;
     box-sizing: content-box;
@@ -39,9 +41,9 @@
 }
 .soldiergreen:hover{
     background-color: purple;
-    transition: all ease-in 1s;
+    transition: all ease-in 0.8s;
 }
 .soldierwhite:hover{
     background-color: purple;
-    transition: all ease-in 1s;
+    transition: all ease-in 0.8s;
 }
