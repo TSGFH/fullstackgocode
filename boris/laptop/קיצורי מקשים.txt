@@ -1,0 +1,10 @@
+Ctrl + a - מסמן הכל
+Ctrl + c - להעתיק
+Ctrl + v - להדביק
+Ctrl + s - לשמור
+Ctrl + f - חיפוש
+Ctrl + p - להדפיס
+Ctrl + enter - לרדת שורה
+alt + tab - לעבור אפליקציות
+Windows + tab - לעבור אפליקציות
+F2 - לשנות שם לקובץ 
