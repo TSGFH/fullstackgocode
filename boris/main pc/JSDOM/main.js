@@ -3,12 +3,12 @@ function showMessage() {
     alert(alerter.value);
   }
 
-//   let cords = document.addEventListener("mousemove", function(event){
-//     let x = event.clientX;
-//     let y = event.clientY;
-//     console.log("your x is: " + x + " your Y is: " + y)
-//   });
-//   console.log(cords);
+  let cords = document.addEventListener("mousemove", function(event){
+    let x = event.clientX;
+    let y = event.clientY;
+    console.log("your x is: " + x + " your Y is: " + y)
+  });
+  console.log(cords);
 
   const imger = document.querySelector("input");
   function showImg(){
