@@ -1,0 +1,287 @@
+@font-face {
+    font-family: Raleway;
+    src: url("fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+*{
+    font-family: Raleway;
+    max-width: 1920px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    color: black;
+    background-image: url("images/ss.jpg");
+    padding: 50px;
+    height: 700px;
+    color: white;
+}
+.smalllogo{
+    position: absolute;
+    left: 386.01px;
+    top: 16.01px;
+}
+.btn{
+    background-color: yellow;
+    width: 172px;
+    height: 44px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.mont{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    text-align: center;
+}
+.montp{
+    width: 636px;
+    margin: 50px;
+}
+.bigdiv{
+    background-color: lightslategrey;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.cardalign{
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+}
+.card{
+    background-color: white;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    align-content: center;
+    width: 274px;
+    margin: 5px;
+    height: 353px;
+}
+
+.incard{
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+.hp{
+    display: flex; 
+    flex-direction: row;
+}
+.blackbox{
+background-color: black;
+color: white;
+padding: 50px;
+}
+.spanalign{
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.fakebtn{
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    height: 71px;
+    width: 274px;
+}
+.axetwo{
+    display: flex;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+.tryit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    height: 62.99989700317406px;
+    width: 1168.0000000000043px;
+    left: 376px;
+    top: 2500px;
+    border: solid black
+    
+}
+.img{
+    position: absolute;
+    left: 480px;
+    top: -60px;
+    background-color: white;
+}
+.fixaspan{
+    background-color: white;
+    margin: 50px;
+}
+.imgrow{
+    display: flex;
+    flex-direction: row;
+}
+
+.newimg{
+    height: 350px;
+    width: 320px;
+}
+.placeholder{
+    margin: 150px;
+}
+.yellow{
+    position: absolute;
+    height: 258px;
+    width: 240px;
+    left: 650px;
+    top: 2785px;
+    border-radius: 0px;
+    background-color: yellow;
+}
+.helpme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    margin: 10px;
+}
+.like{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.span2{
+    background-color: yellow;
+    width: 270px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+.Viewourvideo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(images/san.png);
+    height: 375px;
+}
+.span3{
+    background-color: yellow;
+    width: 270px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.yellowthing{
+    background-color: yellow ;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 274px;
+}
+.card2{
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    align-content: center;
+    margin: 5px;
+    height: 520px;
+    width: 274px;
+    border:5px solid lightslategray
+
+}
+.cardalign2{
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+}
+.Wall{
+    display: flex;
+    flex-direction: row;
+    
+}
+.Graytext{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.imgray{
+    background-color: gray;
+    height: 380px;
+    width: 572px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.photo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sort{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.socials{
+    display: flex;
+    flex-direction: row;
+}
+.moreyellow{
+    display: flex;
+    color: black;
+    font-weight: bold;
+    background-color: yellow;
+    height: 45px;
+    width: 372px;
+    border-radius: 27px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}

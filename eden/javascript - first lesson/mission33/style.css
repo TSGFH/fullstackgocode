@@ -1,0 +1,47 @@
+
+.chessboard{
+    border: 2px solid black;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    height: 50vw;
+    margin: 0 auto;
+    width: 50vw;
+  }
+  
+  .row{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+  }
+  
+  
+  .white-box{
+    background-color: white;
+    flex: 1;
+  }
+  
+  .black-box{
+    background-color: black;
+    flex: 1;
+  }
+.soldiergreen{
+    background-color: blue;
+    border-radius: 75%;
+    width: 115px;
+    height: 115px;
+}
+.soldierwhite{
+    background-color: red;
+    border-radius: 75%;
+    width: 115px;
+    height: 115px;
+}
+.soldiergreen:hover{
+    background-color: purple;
+    transition: all ease-in 1s;
+}
+.soldierwhite:hover{
+    background-color: purple;
+    transition: all ease-in 1s;
+}
