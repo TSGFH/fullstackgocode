@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.search-container {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+.search-box {
+  background: #eee;
+  width: 25vw;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.search-box input {
+  background: none;
+  border: none;
+  font-family: inherit;
+  padding: 10px;
+  font-size: 18px;
+  padding-left: 20px;
+  outline: none;
+  width: 100%;
+}
+.search-box button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  border-radius: 50%;
+}
+ul.autocomplete {
+  position: absolute;
+  background: #fff;
+  width: 20vw;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0px;
+  list-style: none;
+  top: calc(100% + 10px);
+  left: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+  transition: 0.2s ease;
+}
+.autocomplete.shown,
+.autocomplete:hover {
+  opacity: 1;
+  pointer-events: all;
+}
+.autocomplete .autocomplete-suggestion {
+  padding: 10px;
+  cursor: default;
+}
+.autocomplete .autocomplete-suggestion:hover {
+  background: #eee;
+}
