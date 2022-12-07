@@ -1,0 +1,91 @@
+.hader{
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.totheleft{
+    display: flex;
+    flex-direction: row;
+}
+.totheright{
+    display: flex;
+    justify-content: space-around
+}
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:aqua ;
+}
+.bottom:hover{
+    background-color:gray ;
+}
+button{
+    margin: 10px;
+}
+.homeshows{
+    display: flex;
+    flex-direction: row;
+    background-color: wheat;
+    padding: 5px;
+}
+.adds{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:10px;
+}
+.showcardsfilter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+}
+.upanddown{
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    align-items: center;
+    margin:10px;
+}
+.heart{
+    display: flex;
+    flex-direction: row;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+}
+.fixit{
+    display: flex;
+    flex-direction: column;
+}
+.img2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:10px;
+}
+.space{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.leftside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.rightside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

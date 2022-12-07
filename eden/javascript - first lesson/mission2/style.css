@@ -1,0 +1,99 @@
+.header{
+    background-image: url(https://static.pexels.com/photos/248515/pexels-photo-248515.png);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 450px;
+}
+.sectiontwo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.twoside{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 480px;
+}
+.fixit{
+    padding: 20px;
+    text-align: center;
+}
+.graybox{
+    background-color: gray;
+}
+.cardalign{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.incard{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    text-align: center;
+}
+.blankspace{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.twoface{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.twoface > div{
+    width: 1000px;
+}
+.blue{
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+.gray{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+.footer{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+.btn{
+    padding: 30px;
+    font-size: larger;
+}
+@media screen and (max-width: 414px) {
+    .cardalign{
+        flex-direction: column;
+    }
+}
