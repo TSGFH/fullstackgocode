@@ -10,23 +10,23 @@ in1.setAttribute('name', 'fname');
 const in2 = document.createElement("input");
 in2.setAttribute('type', 'text');
 in2.setAttribute('placeholder', 'last name');
-in1.setAttribute('name', 'lname');
+in2.setAttribute('name', 'lname');
 const in3 = document.createElement("input");
 in3.setAttribute('type', 'text');
 in3.setAttribute('placeholder', 'city');
-in1.setAttribute('name', 'city');
+in3.setAttribute('name', 'city');
 const in4 = document.createElement("input");
 in4.setAttribute('type', 'text');
 in4.setAttribute('placeholder', 'country');
-in1.setAttribute('name', 'country');
+in4.setAttribute('name', 'country');
 const in5 = document.createElement("input");
 in5.setAttribute('type', 'text');
 in5.setAttribute('placeholder', 'date of birth');
-in1.setAttribute('name', 'dob');
+in5.setAttribute('name', 'dob');
 const in6 = document.createElement("input");
 in6.setAttribute('type', 'text');
 in6.setAttribute('placeholder', 'phone number');
-in1.setAttribute('name', 'pnumber');
+in6.setAttribute('name', 'pnumber');
 document.body.append(in1,in2,in3,in4,in5,in6);
 
 const select1 = document.createElement("select");
@@ -70,7 +70,7 @@ btn.innerText = "submit";
 document.body.append(btn);
 
 
-const everything = document.querySelectorAll("input","option");
+const everything = document.querySelectorAll("input");
 const fullobj = {};
 const send = document.querySelector(".sender");
 
@@ -89,4 +89,4 @@ send.addEventListener('click',function(){
         return;
     }
     console.log(fullobj);
-}); 
+});
