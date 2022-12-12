@@ -6,11 +6,11 @@
 const in1 = document.createElement("input");
 in1.setAttribute('type', 'text');
 in1.setAttribute('placeholder', 'first name');
-in1.setAttribute('name', 'fname');
+in1.setAttribute('name', 'first name');
 const in2 = document.createElement("input");
 in2.setAttribute('type', 'text');
 in2.setAttribute('placeholder', 'last name');
-in2.setAttribute('name', 'lname');
+in2.setAttribute('name', 'last name');
 const in3 = document.createElement("input");
 in3.setAttribute('type', 'text');
 in3.setAttribute('placeholder', 'city');
@@ -22,11 +22,11 @@ in4.setAttribute('name', 'country');
 const in5 = document.createElement("input");
 in5.setAttribute('type', 'text');
 in5.setAttribute('placeholder', 'date of birth');
-in5.setAttribute('name', 'dob');
+in5.setAttribute('name', 'date of birth');
 const in6 = document.createElement("input");
 in6.setAttribute('type', 'text');
 in6.setAttribute('placeholder', 'phone number');
-in6.setAttribute('name', 'pnumber');
+in6.setAttribute('name', 'phone number');
 document.body.append(in1,in2,in3,in4,in5,in6);
 
 const select1 = document.createElement("select");
