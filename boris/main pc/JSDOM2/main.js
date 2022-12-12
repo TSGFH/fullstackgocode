@@ -3,6 +3,8 @@
 // const test2 = document.createElement("p");
 // test.append(test2)
 
+document.body.style.backgroundColor = "pink"
+
 const in1 = document.createElement("input");
 in1.setAttribute('type', 'text');
 in1.setAttribute('placeholder', 'first name');
