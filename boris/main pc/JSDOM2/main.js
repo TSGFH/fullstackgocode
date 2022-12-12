@@ -57,6 +57,8 @@ legend.append(div1);
 const in7 = document.createElement("input");
 in7.setAttribute("type","radio");
 in7.setAttribute("name","citizen of israel");
+in7.setAttribute("id","radio1");
+in7.setAttribute("value","yes")
 div1.append(in7);
 const label1 = document.createElement("label");
 label1.setAttribute("name","test1")
@@ -69,6 +71,8 @@ legend.append(div2);
 const in8 = document.createElement("input");
 in8.setAttribute("type","radio");
 in8.setAttribute("name","citizen of israel");
+in8.setAttribute("id","radio2");
+in8.setAttribute("value","no")
 div2.append(in8);
 const label2 = document.createElement("label");
 label2.setAttribute("name","test2")
