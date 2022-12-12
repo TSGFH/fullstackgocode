@@ -33,7 +33,7 @@ slice - חותך
 JSDOM:
 intertext - מה יהיה בתוך הטקסט
 document.createElement("select") - חייב להיקרא בשם נכון
-
+id כמו class רק שקוראים לו עם # 
 
 git:
 להוסיף:
