@@ -4,6 +4,10 @@
     justify-content: center;
     align-items: center;
 }
-.btn{
+img{
+    width: 100px;
+    height: 100px;
+}
+button{
     margin: 10px;
 }

@@ -1,28 +1,16 @@
 const url = 'https://jsonplaceholder.typicode.com/todos'
 
-fetch(url)
-    .then(handleErrors)
-    .then(parseJSON)
-    .then(updateProfile)
-    .catch(printError);
-
-function handleErrors(res) {
-    if (!res.ok) {
-      throw error(res.status);
+async function showtodo(){
+  const test = await fetch(url);
+    const test2 = await test.json();
+    console.log(test2);
+    for(let i = 0; i < test2.length; i++){
+      const printer = document.createElement("h1")
+      printer.innerText = test2[i].title
+      document.body.append(printer)
+      printer.innerText = test2[i].title
+      if(test2[i].completed === false){
+        printer.style.textDecoration = "line-through"
+      }
     }
-    console.log(res);
-    return res;
-  }
-  
-  function parseJSON(res) {
-    return res.json();
-  }
-
-  function updateProfile(profile) {
-    console.log(profile)
-    return 1;
-  }
-
-  function printError(error) {
-    console.log(error);
-  }
+}
