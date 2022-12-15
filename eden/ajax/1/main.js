@@ -11,12 +11,11 @@ async function todos(){
         document.body.append(smallhead)
         smallhead.innerText = test2[i].title
         if(test2[i].completed === false){
-            smallhead.style.textDecoration = "line_through"
+            smallhead.style.textDecoration = "line-through"
         }
     }
     
 }
-
 
 
 
