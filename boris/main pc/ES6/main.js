@@ -1,4 +1,4 @@
-function detectCollision(objects, point) {
+const detectCollision = (objects, point)=> {
   for (let i = 0; i < objects.length; i++) {
     const { x, y, width, height } = objects[i];  // Here we are destructuring each object
     if (
