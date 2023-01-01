@@ -1,15 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Products} from '../data/Products'
 import './Card.css'
 import Filter from './Filter'
 
 function Card() {
-  const test=true;
+  const categories = Products.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index);
+  const [products, setProducts] = useState(Products)
+  
+  const onFilterChange = (e) => {
+    if (e.target.value === "All") {
+      setProducts(Products)
+    }else {
+      setProducts(products.filter(p => p.category === e.target.value))
+      }
+      }
   return (
       <div className="flex2">
-        {test && <button onClick={console.log("hi")}>click me</button>}
-         <Filter />
-          {Products.map((p) => 
+      <Filter categories={categories} onFilterChange={onFilterChange} />
+          {products.map((p) => 
               <div>
                   <h1>{p.title}</h1>
                   <img width={100} height="100" src={p.image} alt=''></img>
