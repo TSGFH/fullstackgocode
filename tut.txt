@@ -38,7 +38,7 @@ id כמו class רק שקוראים לו עם #
 git:
 קובץ חדש:
 git add eden
-git commit - m "text
+git commit - m "text"
 git push -u origin master
 
 לעלות קובץ:
