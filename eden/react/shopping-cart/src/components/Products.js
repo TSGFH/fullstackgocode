@@ -19,12 +19,13 @@ const Products = () => {
         .catch((e)=>console.log(e))
         .finally(()=>setLoading(false));
     },[])
-    const [supercount,setSupercount]=useState(0);
-    const incerment = () =>{
-        setSupercount(supercount +1)
+    const incerment = (id) =>{
+        const cloneData = [...data]
+        const chosenProductIndex = cloneData.findIndex(p => p.id === id)
+        cloneData[chosenProductIndex].amount > 0 ? cloneData[chosenProductIndex].amount += 1 : cloneData[chosenProductIndex].amount = 1
+        setData(cloneData)
     }
     const decerment = () =>{
-        setSupercount(supercount -1)
     }
   return (
     <div className='flex3'>
@@ -42,8 +43,8 @@ const Products = () => {
                 <h6>Rating: {somthing.rating.rate} Count:{somthing.rating.count}</h6>
                 <h6>{somthing.category}</h6>
                 <div className='flex4'>
-                <button onClick={incerment}>+</button>
-                <h1>{supercount}</h1>
+                <button onClick={() => incerment(somthing.id)}>+</button>
+                <h1>{somthing.amount ? somthing.amount : 0}</h1>
                 <button onClick={decerment}>-</button> 
                 </div>
                 
