@@ -43,3 +43,27 @@ git push -u origin master
 
 לעלות קובץ:
 git pull
+
+-- React
+label - תגית כמו h1
+import - לייבא את הקובץ
+import {here} from '../data/Data';
+select פותח אופציות
+option - הופך את זה לקטגוריה
+../ לצאת מהתקיה
+./ - קובץ באותה התקיה 
+map - עושה lop
+=> - פונקציה
+useState - נתון שהוא שומר כל מתי שמרעננים
+useRafe - יוצר התחייסות לאלמנט מסויים 
+
+rother 
+Main - מחזיק את כל הדפים שיש ב route
+routes - פותח וחייב לסגור בסוף
+ואז אפשר להכניס route
+דוגמא route path=""
+ route - מעבר בין דפים | פותח דף כמו בHTML מחזיק אותו  Main
+link - סוג של כפתור to זה הroute 
+: - לוקח את הקמפונטה ויראו הכל בעמוד אחד
+useparams - זה hook - נותן אובייקט עם כל הפרמטים
+דוגמא params.prodactid
