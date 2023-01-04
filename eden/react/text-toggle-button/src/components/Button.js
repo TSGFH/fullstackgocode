@@ -1,21 +1,10 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 
 const Button = () => {
-
-    let [toggle,setToggle]=useState('hi');
-
-    useEffect(()=>{
-        // setToggle('hi')
-        // console.log("it changed to somthing");
-        if(toggle === ''){
-            setToggle("hi")
-            console.log("it changed to somthing")
-        }
-    },[toggle])
-    
+  let [tog, setTog]=useState(true);
   return (
     <div>
-        <button onClick={()=>{setToggle(''); console.log("it has changed to nothing")}}>{toggle}</button>
+      {tog ? <button onClick={()=> setTog(!tog)}>hi</button> : <button  onClick={()=> setTog(!tog)}></button>}
     </div>
   )
 }
