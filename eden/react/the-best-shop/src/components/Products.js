@@ -1,14 +1,18 @@
 import React,{useState,useEffect} from 'react'
-import Filter from './Filter';
+import Filter,{supa2} from './Filter';
 import './Products.css'
+export let supa = '';
 const Products = () => {
-  const [getPro, setGetPro]= useState([]);
+   const [getPro, setGetPro]= useState([]);
+   const [products, setProducts] = useState(getPro)
   const GetFake = async () =>{
     const test = await fetch("https://fakestoreapi.com/products")
-    const test2 = await test.json()
+     const test2 = await test.json()
     setGetPro(test2)
-    
   }
+  
+  supa = getPro;
+  
   useEffect(()=>{
     GetFake()
   },[])
@@ -28,24 +32,28 @@ const decerment = (id) =>{
   setGetPro(cloneData)
 }
 
-
+const onFilterChange = (e) => {
+  if (e.target.value === "All") {
+    setProducts(getPro)
+  }else {
+    setProducts(products.filter(t => t.getPro === e.target.value))
+    }
+    }
   return (
     <div className='test2'>
-      <div className='test4'>
-        <Filter/>
-        </div>
-      
-        {getPro.map((e)=>
+      <Filter categories={supa2} onFilterChange={onFilterChange} />
+  
+        {getPro.map((t)=>
       <div className='test1'>
-        <h6>{e.title}</h6>
-        <img width={100} height={100} src={e.image} alt=''></img>
-        <h6>{e.price}$</h6>
-        <h6>{e.category}</h6>
-        <h6>Rating {e.rating.rate} Count {e.rating.count}</h6>
+        <h6>{t.title}</h6>
+        <img width={100} height={100} src={t.image} alt=''></img>
+        <h6>{t.price}$</h6>
+        <h6>{t.category}</h6>
+        <h6>Rating {t.rating.rate} Count {t.rating.count}</h6>
         <div className='test3'>
-        <button onClick={() => incerment(e.id)}>+</button>
-                <h1>{e.amount ? e.amount : 0}</h1>
-                <button onClick={() => decerment(e.id)}>-</button> 
+        <button onClick={() => incerment(t.id)}>+</button>
+                <h1>{t.amount ? t.amount : 0}</h1>
+                <button onClick={() => decerment(t.id)}>-</button> 
         </div>
         
       </div>
