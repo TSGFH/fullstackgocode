@@ -8,7 +8,6 @@ const Products = () => {
   const [products, setProducts] = useState(getPro)
   const [loading, setLoading]= useState(false)
   
-  
   useEffect(() => {
     setLoading(true);
     axios({
