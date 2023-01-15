@@ -22,8 +22,3 @@
     justify-content: center;
     align-items: center;
 }
-.stupidbutton{
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-}
