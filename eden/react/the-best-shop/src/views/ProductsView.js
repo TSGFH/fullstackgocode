@@ -5,7 +5,8 @@ import axios from 'axios'
 const ProductsView = () => {
   const [product, setProduct] = useState({})
   const params = useParams()
-
+  const [loading, setLoading] = useState(false)
+  
   const fetchSingleProduct = () => {
     axios({
       method: "GET",
@@ -14,14 +15,20 @@ const ProductsView = () => {
     }).then(res => {
       setProduct(res.data)
     }).catch((e) => console.log(e))
-      .finally(() => console.log('finished'))
+      .finally(() => setLoading(false))
   }
   useEffect(() => {
+    setLoading(true);
     fetchSingleProduct()
   }, [])
-  
   return (
-    <div className='lefttoright'>
+    <div>
+      {loading && (
+        <div>
+        {" "}
+        <h1>Loading...</h1>
+      </div>)}
+      <div className='lefttoright'>
       <img height={500} width={500} src={product.image} alt=''/>
       <div className='uptodown'>
         <h1>{product.title}</h1>
@@ -32,6 +39,8 @@ const ProductsView = () => {
         <Link to={`/`}>Home</Link>
       </div>
     </div>
+    </div>
+    
   )
 }
 
