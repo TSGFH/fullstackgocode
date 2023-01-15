@@ -2,7 +2,9 @@ import React,{useState,useEffect} from 'react'
 import Filter,{categories2} from './Filter';
 import './Products.css'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 export let supa = [];
+
 const Products = () => {
    const [getPro, setGetPro]= useState([]);
   const [products, setProducts] = useState(getPro)
@@ -60,7 +62,8 @@ const decerment = (id) =>{
         <img width={100} height={100} src={t.image} alt=''></img>
         <h6>{t.price}$</h6>
         <h6>{t.category}</h6>
-        <h6>Rating {t.rating.rate} Count {t.rating.count}</h6>
+              <h6>Rating {t.rating.rate} Count {t.rating.count}</h6>
+              <Link to={`/products/${t.id}`}>View</Link>
         </button>
         
         <div className='test3'>
