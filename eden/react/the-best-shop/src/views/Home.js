@@ -7,17 +7,15 @@ import '@fontsource/roboto/300.css';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 const Home = () => {
-  let [cartOpen, setCartOpen] = useState(true);
+  let [cartOpen, setCartOpen] = useState(false);
 
-  const onClose = () => {
-    setCartOpen(true);
-  };
+    
 
   return (
     <div>
       <Header />
-      <Cart />
-      <Button variant="outlined" onClick={() => onClose()}><img width={50} height={50} src='https://cdn-icons-png.flaticon.com/512/263/263142.png' alt='' /></Button>
+      <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
+      <Button variant="outlined" onClick={() => setCartOpen(true)}><img width={50} height={50} src='https://cdn-icons-png.flaticon.com/512/263/263142.png' alt='' /></Button>
       <Products />
       <Footer />
     </div>

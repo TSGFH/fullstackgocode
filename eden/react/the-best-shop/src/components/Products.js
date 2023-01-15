@@ -49,12 +49,16 @@ const decerment = (id) =>{
   }
   return (
     <div className='test2'>
-      {loading && (
-        <div>
-        {" "}
-        <h1>Loading...</h1>
-        </div>)}
+      
       <Filter categories={categories2} onFilterChange={onFilterChange} />
+      <div className='supaclassa'>
+        {loading && (
+        <div className='supaclassa'>
+        {" "}
+        <img src={'https://media.giphy.com/media/z9dioYKG0skFb2NuD8/giphy.gif'} alt=''/>
+        </div>)}
+      </div>
+      
         {products.map((t)=>
           <div className='test1'>
         <h6>{t.title}</h6>
