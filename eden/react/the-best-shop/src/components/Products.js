@@ -55,7 +55,7 @@ const decerment = (id) =>{
         {loading && (
         <div className='supaclassa'>
         {" "}
-        <img src={'https://media.giphy.com/media/z9dioYKG0skFb2NuD8/giphy.gif'} alt=''/>
+        <img src={'https://media1.giphy.com/media/daak2Jqk5NZN2G4PKD/giphy.gif?cid=ecf05e47cz9jcpsisryapqqx05xs5vfi0xjruzkxi05u200z&rid=giphy.gif&ct=g'} alt=''/>
         </div>)}
       </div>
       

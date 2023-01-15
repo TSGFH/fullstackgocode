@@ -27,7 +27,7 @@ const ProductsView = () => {
       {loading && (
         <div>
         {" "}
-        <img src='https://media.giphy.com/media/z9dioYKG0skFb2NuD8/giphy.gif' alt=''/>
+        <img src='https://media1.giphy.com/media/daak2Jqk5NZN2G4PKD/giphy.gif?cid=ecf05e47cz9jcpsisryapqqx05xs5vfi0xjruzkxi05u200z&rid=giphy.gif&ct=g' alt=''/>
       </div>)}
       <div className='lefttoright'>
       <img height={250} width={250} src={product.image} alt=''/>
