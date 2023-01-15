@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Err404 from './Err404';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CartView from './CartView';
 const Main = () => {
   return (
       <div>
@@ -12,7 +13,8 @@ const Main = () => {
                   <Route path='/' element={<Home />} />
                   <Route path='/about' element={<About />} />
                   <Route path='products/:productId' element={<ProductsView />} />
-                  <Route path='*' element={<Err404 />} />
+          <Route path='*' element={<Err404 />} />
+          <Route path='/cart' element={<CartView />} />
               </Routes>
           </BrowserRouter>
     </div>

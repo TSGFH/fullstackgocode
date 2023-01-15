@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ProductsView.css'
 import { useParams ,Link} from 'react-router-dom'
 import axios from 'axios'
+import { Button } from '@mui/material'
 const ProductsView = () => {
   const [product, setProduct] = useState({})
   const params = useParams()
@@ -29,14 +30,14 @@ const ProductsView = () => {
         <h1>Loading...</h1>
       </div>)}
       <div className='lefttoright'>
-      <img height={500} width={500} src={product.image} alt=''/>
+      <img height={250} width={250} src={product.image} alt=''/>
       <div className='uptodown'>
         <h1>{product.title}</h1>
-        <h6>{product.price}</h6>
+        <h6>{product.price}$</h6>
         <h6>{product.category}</h6>
         {/* <h6>Rate:{product.rating.rate} Count:{product.rating.count}</h6> */}
         <h6>{product.description}</h6>
-        <Link to={`/`}>Home</Link>
+        <Button variant="contained"><Link to={`/`}>Home</Link></Button>
       </div>
     </div>
     </div>

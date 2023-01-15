@@ -3,6 +3,7 @@ import Filter,{categories2} from './Filter';
 import './Products.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import { Button, InputLabel, MenuItem, Select ,Box, FormControl} from '@mui/material';
 export let supa = [];
 
 const Products = () => {
@@ -46,14 +47,13 @@ const decerment = (id) =>{
     setProducts(getPro.filter(t => t.category === e.target.value))
     }
   }
- 
   return (
     <div className='test2'>
       {loading && (
         <div>
         {" "}
         <h1>Loading...</h1>
-      </div>)}
+        </div>)}
       <Filter categories={categories2} onFilterChange={onFilterChange} />
         {products.map((t)=>
           <div className='test1'>
@@ -62,11 +62,11 @@ const decerment = (id) =>{
         <h6>{t.price}$</h6>
         <h6>{t.category}</h6>
               <h6>Rating {t.rating.rate} Count {t.rating.count}</h6>
-              <Link to={`/products/${t.id}`}>View</Link>
+              <Button variant="outlined"><Link to={`/products/${t.id}`}>View</Link></Button>
         <div className='test3'>
-        <button onClick={() => incerment(t.id)}>+</button>
+        <Button  onClick={() => incerment(t.id)}>+</Button>
                 <h1>{t.amount ? t.amount : 0}</h1>
-                <button onClick={() => decerment(t.id)}>-</button> 
+                <Button  onClick={() => decerment(t.id)}>-</Button> 
         </div>
       </div>
       )}
