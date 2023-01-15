@@ -7,7 +7,7 @@ export let supa = [];
 
 const Products = () => {
    const [getPro, setGetPro]= useState([]);
-  const [products, setProducts] = useState(getPro)
+  const [products, setProducts] = useState([])
   const [loading, setLoading]= useState(false)
   
   useEffect(() => {
@@ -18,6 +18,7 @@ const Products = () => {
       
     }).then(res => {
       setGetPro(res.data)
+      setProducts(res.data)
     }).catch((e) => console.log(e))
       .finally(() => setLoading(false))
   }, [])
@@ -42,7 +43,7 @@ const decerment = (id) =>{
   if (e.target.value === "All") {
     setProducts(getPro)
   }else {
-    setProducts(products.filter(t => t.category === e.target.value))
+    setProducts(getPro.filter(t => t.category === e.target.value))
     }
   }
  

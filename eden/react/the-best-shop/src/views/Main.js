@@ -1,5 +1,5 @@
 import React from 'react'
-import Products from '../views/Products';
+import ProductsView from '../views/ProductsView';
 import Home from './Home';
 import About from './About';
 import Err404 from './Err404';
@@ -11,7 +11,7 @@ const Main = () => {
               <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/about' element={<About />} />
-                  <Route path='products/:productId' element={<Products />} />
+                  <Route path='products/:productId' element={<ProductsView />} />
                   <Route path='*' element={<Err404 />} />
               </Routes>
           </BrowserRouter>
