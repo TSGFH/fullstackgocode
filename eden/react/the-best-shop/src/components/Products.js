@@ -3,14 +3,15 @@ import Filter,{categories2} from './Filter';
 import './Products.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import { Button, InputLabel, MenuItem, Select ,Box, FormControl} from '@mui/material';
+import { Button,Card,CardMedia,CardContent,Typography,CardActions} from '@mui/material';
+import FilterSlider from './FilterSlider'
 export let supa = [];
 
 const Products = () => {
    const [getPro, setGetPro]= useState([]);
   const [products, setProducts] = useState([])
   const [loading, setLoading]= useState(false)
-  
+  const [moneyp,setMoneyp]= useState([]);
   useEffect(() => {
     setLoading(true);
     axios({
@@ -45,12 +46,16 @@ const decerment = (id) =>{
     setProducts(getPro)
   }else {
     setProducts(getPro.filter(t => t.category === e.target.value))
+    if(e.target.value !== "All"){
+      setMoneyp(products.filter(t=>t.price === e.target.value))
+    }
     }
   }
   return (
     <div className='test2'>
       
       <Filter categories={categories2} onFilterChange={onFilterChange} />
+      <FilterSlider cats={products} onFilterChange={onFilterChange}/>
       <div className='supaclassa'>
         {loading && (
         <div className='supaclassa'>
@@ -58,22 +63,35 @@ const decerment = (id) =>{
         <img src={'https://media1.giphy.com/media/daak2Jqk5NZN2G4PKD/giphy.gif?cid=ecf05e47cz9jcpsisryapqqx05xs5vfi0xjruzkxi05u200z&rid=giphy.gif&ct=g'} alt=''/>
         </div>)}
       </div>
-      
-        {products.map((t)=>
-          <div className='test1'>
-        <h6>{t.title}</h6>
-        <img width={100} height={100} src={t.image} alt=''></img>
-        <h6>{t.price}$</h6>
-        <h6>{t.category}</h6>
-              <h6>Rating {t.rating.rate} Count {t.rating.count}</h6>
-              <Button variant="outlined"><Link to={`/products/${t.id}`}>View</Link></Button>
-        <div className='test3'>
-        <Button  onClick={() => incerment(t.id)}>+</Button>
-                <h1>{t.amount ? t.amount : 0}</h1>
-                <Button  onClick={() => decerment(t.id)}>-</Button> 
-        </div>
-      </div>
-      )}
+      {products.map(e=>
+          <div>
+            <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        sx={{ height: 140 }}
+        image={e.image}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {e.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        {e.price}$
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        {e.category}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        {`Rating:${e.rating.rate} Count:${e.rating.count}`}
+        </Typography>
+      </CardContent>
+      <CardActions>
+      <Button variant="outlined"><Link to={`/products/${e.id}`}>View</Link></Button>
+        <Button  onClick={() => incerment(e.id)}>+</Button>
+                <Typography>{e.amount ? e.amount : 0}</Typography>
+                <Button  onClick={() => decerment(e.id)}>-</Button>
+      </CardActions>
+    </Card>
+          </div>)}
     </div>
   )
 }
