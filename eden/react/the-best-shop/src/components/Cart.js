@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import { useState } from 'react';
 import { Button } from '@mui/material';
 export default function Cart({cartOpen, setCartOpen}) {
   

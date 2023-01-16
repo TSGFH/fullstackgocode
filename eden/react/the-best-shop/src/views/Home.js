@@ -9,8 +9,6 @@ import { Button } from '@mui/material';
 const Home = () => {
   let [cartOpen, setCartOpen] = useState(false);
 
-    
-
   return (
     <div>
       <Header />
