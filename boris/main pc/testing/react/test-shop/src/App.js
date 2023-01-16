@@ -5,14 +5,11 @@ import Footer from './comps/Footer'
 import './comps/super.css'
 function App() {
   return (
-    <div className="App test1">
+    <>
       <Header/>
-      <div>
         <Data/>
-      </div>
-      
       <Footer/>
-    </div>
+    </>
   );
 }
 

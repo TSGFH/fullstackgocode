@@ -17,9 +17,9 @@ const Data = () => {
         .finally(() => setLoading(false))
     }, [])
   return (
-    <div>
+    <>
         <Cards cats={data} dogs={loading}/>
-    </div>
+    </>
   )
 }
 
