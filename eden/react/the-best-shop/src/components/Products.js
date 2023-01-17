@@ -41,12 +41,13 @@ const decerment = (id) =>{
 }
 
   const onFilterChange = (e) => {
-  
-  if (e.target.value === "All") {
+  console.log(e.target.value)
+  if (e.target.value === "All Products") {
+    console.log('got here')
     setProducts(getPro)
   }else {
     setProducts(getPro.filter(t => t.category === e.target.value))
-    if(e.target.value !== "All"){
+    if(e.target.value !== "All Products"){
       setMoneyp(products.filter(t=>t.price === e.target.value))
     }
     }
