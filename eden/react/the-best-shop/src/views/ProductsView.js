@@ -23,7 +23,7 @@ const ProductsView = () => {
     fetchSingleProduct()
   }, [])
   return (
-    <div>
+    <div className='border'>
       {loading && (
         <div>
         {" "}
@@ -35,7 +35,6 @@ const ProductsView = () => {
         <h1>{product.title}</h1>
         <h6>{product.price}$</h6>
         <h6>{product.category}</h6>
-        {/* <h6>Rate:{product.rating.rate} Count:{product.rating.count}</h6> */}
         <h6>{product.description}</h6>
         <Button variant="contained"><Link to={`/`}>Home</Link></Button>
       </div>

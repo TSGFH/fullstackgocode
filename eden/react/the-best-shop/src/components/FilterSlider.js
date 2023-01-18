@@ -18,10 +18,7 @@ const FilterSlider = (props,onFilterChange) => {
 
 
   return (
-    <div>
-      <div>
-        <img src='' alt=''/>
-      </div>
+    <>
         <Box sx={{ width: 300 }}>
       <Slider
         getAriaLabel={() => 'price range'}
@@ -32,7 +29,7 @@ const FilterSlider = (props,onFilterChange) => {
         max="1000"
       />
     </Box>
-    </div>
+    </>
   );
 };
 

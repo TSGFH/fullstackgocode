@@ -1,16 +1,19 @@
 import React,{useState,useEffect} from 'react'
 import Filter,{categories2} from './Filter';
-import './Products.css'
-import axios from 'axios'
+import './Products.css';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Button,Card,CardMedia,CardContent,Typography,CardActions} from '@mui/material';
-import FilterSlider from './FilterSlider'
+import { Button,Card,CardMedia,CardContent,Typography,CardActions,Rating} from '@mui/material';
+import FilterSlider from './FilterSlider';
+import '../views/About.css'
+import Cart from './Cart';
 export let supa = [];
 
 const Products = () => {
+  let [cartOpen, setCartOpen] = useState(false);
    const [getPro, setGetPro]= useState([]);
-  const [products, setProducts] = useState([])
-  const [loading, setLoading]= useState(false)
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading]= useState(false);
   const [moneyp,setMoneyp]= useState([]);
   useEffect(() => {
     setLoading(true);
@@ -31,6 +34,9 @@ const Products = () => {
     cloneData[chosenProductIndex].amount > 0 ? cloneData[chosenProductIndex].amount += 1 : cloneData[chosenProductIndex].amount = 1
     setGetPro(cloneData)
     // {code to add items to the cart}
+    if(cloneData[chosenProductIndex].amount>0){
+      
+    }
 }
 const decerment = (id) =>{
   const cloneData = [...getPro]
@@ -53,22 +59,25 @@ const decerment = (id) =>{
     }
   }
   return (
-    <div className='test2'>
-      
+    <>
+    <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
+      <div className='filters fu'>
+      <Button variant="outlined" onClick={() => setCartOpen(true)}><img width={50} height={50} src='https://cdn-icons-png.flaticon.com/512/263/263142.png' alt='' className='spacer'/></Button>
       <Filter categories={categories2} onFilterChange={onFilterChange} />
       <FilterSlider cats={products} onFilterChange={onFilterChange}/>
-      <div className='supaclassa'>
+      </div>
+      <>
         {loading && (
-        <div className='supaclassa'>
+        <>
         {" "}
         <img src={'https://media1.giphy.com/media/daak2Jqk5NZN2G4PKD/giphy.gif?cid=ecf05e47cz9jcpsisryapqqx05xs5vfi0xjruzkxi05u200z&rid=giphy.gif&ct=g'} alt=''/>
-        </div>)}
-      </div>
-      {products.map(e=>
-          <div>
+        </>)}
+      </>
+      <div className='flexing'>
+        {products.map(e=>
             <Card sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 300}}
         image={e.image}
       />
       <CardContent>
@@ -82,7 +91,8 @@ const decerment = (id) =>{
         {e.category}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {`Rating:${e.rating.rate} Count:${e.rating.count}`}
+        <Rating name="read-only" defaultValue={e.rating.rate} readOnly ></Rating>
+        Count:{e.rating.count}
         </Typography>
       </CardContent>
       <CardActions>
@@ -91,9 +101,10 @@ const decerment = (id) =>{
                 <Typography>{e.amount ? e.amount : 0}</Typography>
                 <Button  onClick={() => decerment(e.id)}>-</Button>
       </CardActions>
-    </Card>
-          </div>)}
-    </div>
+    </Card>)}
+      </div>
+      
+    </>
   )
 }
 

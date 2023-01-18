@@ -1,32 +1,15 @@
-.test1{
-    width: 90;
-    height: 160;
-    border: 1px solid black;
-    margin: 5px;
-    padding: 5px;
-}
-.test2{
+.flexing{
     display: flex;
     flex-direction: row;
-    overflow: auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.test3{
+.filters{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-.test4{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 *{
     text-decoration: none;
-}
-.supaclassa{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

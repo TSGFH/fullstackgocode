@@ -5,10 +5,14 @@ import About from './About';
 import Err404 from './Err404';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartView from './CartView';
+import Header from '../components/Header';
+import './Main.css';
+import Footer from '../components/Footer';
 const Main = () => {
   return (
-      <div>
+      <div className='theflex1'>
           <BrowserRouter>
+          <Header />
               <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/about' element={<About />} />
@@ -16,6 +20,7 @@ const Main = () => {
           <Route path='*' element={<Err404 />} />
           <Route path='/cart' element={<CartView />} />
               </Routes>
+              <Footer />
           </BrowserRouter>
     </div>
   )

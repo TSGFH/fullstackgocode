@@ -13,7 +13,7 @@ const Filter = ({categories, onFilterChange}) => {
     onFilterChange(e)
   }
   return (
-    <div>
+    <>
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Filter:</InputLabel>
@@ -22,15 +22,14 @@ const Filter = ({categories, onFilterChange}) => {
           id="demo-simple-select"
           value={cat}
           label="Filter:"
-          onChange={handleSelect}
-        >
-          {/* <MenuItem value="All">All Products</MenuItem> */}
+          onChange={handleSelect}>
+            
           {categories.map((i,index)=> <MenuItem value={i} key={index}>{i}</MenuItem>)}
          
         </Select>
       </FormControl>
     </Box>
-    </div>
+    </>
   )
 }
 

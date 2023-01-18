@@ -1,0 +1,8 @@
+.fixer{
+    display:flex;
+    flex-direction: column;
+}
+.fixer2{
+    display: flex;
+    flex-direction: row;
+}
