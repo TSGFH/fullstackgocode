@@ -10,12 +10,10 @@ const FilterSlider = (props,onFilterChange) => {
   const money = newpro.map(p => p.price).filter((value, index, array) => array.indexOf(value) === index)
 
   const [value, setValue] = useState([1, 150]);
-
  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
 
   return (
     <>

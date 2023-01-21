@@ -29,22 +29,6 @@ const Products = () => {
       .finally(() => setLoading(false))
   }, [])
   supa = getPro
-//   const incerment = (id) =>{
-//     const cloneData = [...getPro]
-//     const chosenProductIndex = cloneData.findIndex(p => p.id === id)
-//     cloneData[chosenProductIndex].amount > 0 ? cloneData[chosenProductIndex].amount += 1 : cloneData[chosenProductIndex].amount = 1
-//     setGetPro(cloneData)
-//     // {code to add items to the cart}
-
-// }
-// const decerment = (id) =>{
-//   const cloneData = [...getPro]
-//   const chosenProductIndex = cloneData.findIndex(p => p.id === id)
-//   cloneData[chosenProductIndex].amount > 0 ? cloneData[chosenProductIndex].amount -= 1 : cloneData[chosenProductIndex].amount = 0
-//   setGetPro(cloneData)
-//   // {code to remove items from the cart}
-
-// }
 
   const onFilterChange = (e) => {
   console.log(e.target.value)

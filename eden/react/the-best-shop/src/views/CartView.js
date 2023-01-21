@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import './CartView.css';
-import {Card,CardMedia,Typography,CardContent, Button} from '@mui/material'
+import {Card,Typography,CardContent, Button} from '@mui/material'
 import { Cartcontext } from '../Context/Context';
 const CartView = () => {
   const Globalstate = useContext(Cartcontext);
