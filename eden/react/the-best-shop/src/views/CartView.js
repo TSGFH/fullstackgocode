@@ -12,7 +12,10 @@ const CartView = () => {
   const tax = ((total / 100) * 17);
   const grandtotal = (tax + 250 + total);
   return (
-    <div>
+    <div className={"columnDivider"}>
+      <div>
+
+      </div>
       {state.map((item, index) => {
           
           return (

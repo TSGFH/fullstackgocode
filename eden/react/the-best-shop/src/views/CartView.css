@@ -8,3 +8,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.columnDivider{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}

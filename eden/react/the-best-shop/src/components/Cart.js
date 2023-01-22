@@ -41,7 +41,7 @@ export default function Cart({ cartOpen, setCartOpen }) {
               <Button onClick={() => dispatch({ type: "REMOVE", payload: item })} >remove</Button>
             </Card>
           )
-        })};
+        })}
         <Button onClick={() => setCartOpen(false)}>Close Cart</Button>
         <div className='btns'>
           {state.length > 0 && <span>Total:{total}</span>}
