@@ -1,8 +1,17 @@
-.center{
+.supreme{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin-top: 100px;
+}
+.testit{
+    display: flex;
     flex-direction: column;
+}
+
+.columnDivider{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
 }

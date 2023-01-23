@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
 import Filter,{categories2} from './Filter';
 import './Products.css';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import { Button,Card,CardMedia,CardContent,Typography,CardActions,Rating} from '
 import FilterSlider from './FilterSlider';
 import '../views/About.css'
 import Cart from './Cart';
+import { Cartcontext } from '../Context/Context';
 export let supa = [];
 
 const Products = () => {
@@ -28,23 +29,6 @@ const Products = () => {
       .finally(() => setLoading(false))
   }, [])
   supa = getPro
-  const incerment = (id) =>{
-    const cloneData = [...getPro]
-    const chosenProductIndex = cloneData.findIndex(p => p.id === id)
-    cloneData[chosenProductIndex].amount > 0 ? cloneData[chosenProductIndex].amount += 1 : cloneData[chosenProductIndex].amount = 1
-    setGetPro(cloneData)
-    // {code to add items to the cart}
-    if(cloneData[chosenProductIndex].amount>0){
-      
-    }
-}
-const decerment = (id) =>{
-  const cloneData = [...getPro]
-  const chosenProductIndex = cloneData.findIndex(p => p.id === id)
-  cloneData[chosenProductIndex].amount > 0 ? cloneData[chosenProductIndex].amount -= 1 : cloneData[chosenProductIndex].amount = 0
-  setGetPro(cloneData)
-  // {code to remove items from the cart}
-}
 
   const onFilterChange = (e) => {
   console.log(e.target.value)
@@ -58,6 +42,9 @@ const decerment = (id) =>{
     }
     }
   }
+  const Globalstate = useContext(Cartcontext);
+  const dispatch = Globalstate.dispatch;
+  console.log(Globalstate);
   return (
     <>
     <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
@@ -74,34 +61,37 @@ const decerment = (id) =>{
         </>)}
       </>
       <div className='flexing'>
-        {products.map(e=>
-            <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 300}}
-        image={e.image}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {e.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        {e.price}$
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        {e.category}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        <Rating name="read-only" defaultValue={e.rating.rate} readOnly ></Rating>
-        Count:{e.rating.count}
-        </Typography>
-      </CardContent>
-      <CardActions>
-      <Button variant="outlined"><Link to={`/products/${e.id}`}>View</Link></Button>
-        <Button  onClick={() => incerment(e.id)}>+</Button>
-                <Typography>{e.amount ? e.amount : 0}</Typography>
-                <Button  onClick={() => decerment(e.id)}>-</Button>
-      </CardActions>
-    </Card>)}
+        {products.map((item, index) => {
+          item.quantity = 1;
+          return (
+            <Card sx={{ maxWidth: 400 }} key={index}>
+            <CardMedia
+              sx={{ height: 300 }}
+              image={item.image}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {item.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {item.price}$
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {item.category}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                <Rating name="read-only" defaultValue={item.rating.rate} readOnly ></Rating>
+                Count:{item.rating.count}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant="outlined"><Link to={`/products/${item.id}`}>View</Link></Button>
+              <Button onClick={() => dispatch({ type: "ADD", payload: item })}>Add to cart</Button>
+            </CardActions>
+          </Card>
+          )
+          
+        })}
       </div>
       
     </>
