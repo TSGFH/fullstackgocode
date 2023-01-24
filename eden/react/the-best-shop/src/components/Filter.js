@@ -1,10 +1,9 @@
 
-import { Box,FormControl,InputLabel,Select,MenuItem } from '@mui/material'
-import React, {useState} from 'react'
-import { supa } from './Products'
-export let categories2 = ''
-const Filter = ({categories, onFilterChange, cat, setCat}) => {
-  categories2 = categories = supa.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index)
+import { Box, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import React from 'react';
+
+const Filter = ({ cat, setCat, getPro}) => {
+  const categories = getPro.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index)
   categories.unshift("All Products")
 
   const handleSelect = (e) => {
@@ -21,9 +20,7 @@ const Filter = ({categories, onFilterChange, cat, setCat}) => {
           value={cat}
           label="Filter:"
           onChange={handleSelect}>
-            
           {categories.map((i,index)=> <MenuItem value={i} key={index}>{i}</MenuItem>)}
-         
         </Select>
       </FormControl>
     </Box>

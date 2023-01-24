@@ -1,22 +1,21 @@
-import React,{useState,useEffect, useContext} from 'react'
-import Filter,{categories2} from './Filter';
+import React, { useState, useEffect, useContext } from 'react';
+import Filter from './Filter';
 import './Products.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button,Card,CardMedia,CardContent,Typography,CardActions,Rating} from '@mui/material';
 import FilterSlider from './FilterSlider';
-import '../views/About.css'
+import '../views/About.css';
 import Cart from './Cart';
 import { Cartcontext } from '../Context/Context';
-export let supa = [];
 
 const Products = () => {
-  let [cartOpen, setCartOpen] = useState(false);
-   const [getPro, setGetPro]= useState([]);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [getPro, setGetPro]= useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading]= useState(false);
   const [rangePrice,setRangePrice]= useState([1,1000]);
-  const [cat, setCat] = useState("All Products")
+  const [cat, setCat] = useState("All Products");
 
   useEffect(() => {
     setLoading(true);
@@ -29,18 +28,16 @@ const Products = () => {
       setProducts(res.data)
     }).catch((e) => console.log(e))
       .finally(() => setLoading(false))
-  }, [])
-  supa = getPro
+  }, []);
   
-useEffect(()=>{onFilterChange()},[cat, rangePrice])
+  useEffect(() => { onFilterChange() },[cat, rangePrice]);
 
   const onFilterChange = () => {
   if (cat === "All Products") {
-    console.log('got here')
     setProducts(getPro.filter(t=> t.price >= rangePrice[0] && t.price <= rangePrice[1]))
   }else {
-    const filteredProducts = getPro.filter(t => t.category === cat && t.price >= rangePrice[0] && t.price <= rangePrice[1])
-    setProducts(filteredProducts)
+    const filteredProducts = getPro.filter(t => t.category === cat && t.price >= rangePrice[0] && t.price <= rangePrice[1]);
+    setProducts(filteredProducts);
     }
   }
   const Globalstate = useContext(Cartcontext);
@@ -49,9 +46,9 @@ useEffect(()=>{onFilterChange()},[cat, rangePrice])
     <>
     <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
       <div className='filters fu'>
-      <Button variant="outlined" onClick={() => setCartOpen(true)}><img width={50} height={50} src='https://cdn-icons-png.flaticon.com/512/263/263142.png' alt='' className='spacer'/></Button>
-      <Filter categories={categories2} onFilterChange={onFilterChange} cat={cat} setCat={setCat} />
-      <FilterSlider cats={products} onFilterChange={onFilterChange} rangePrice={rangePrice} setRangePrice={setRangePrice}/>
+        <Button variant="outlined" onClick={() => setCartOpen(true)}><img width={50} height={50} src='https://cdn-icons-png.flaticon.com/512/263/263142.png' alt='' className='spacer' /></Button>
+        <Filter onFilterChange={onFilterChange} cat={cat} setCat={setCat} getPro={getPro} />
+        <FilterSlider onFilterChange={onFilterChange} rangePrice={rangePrice} setRangePrice={setRangePrice} />
       </div>
       <>
         {loading && (
@@ -82,18 +79,16 @@ useEffect(()=>{onFilterChange()},[cat, rangePrice])
               <Typography variant="body2" color="text.secondary">
                 <Rating name="read-only" defaultValue={item.rating.rate} readOnly ></Rating>
                 Count:{item.rating.count}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button variant="outlined"><Link to={`/products/${item.id}`}>View</Link></Button>
-              <Button onClick={() => dispatch({ type: "ADD", payload: item })}>Add to cart</Button>
-            </CardActions>
-          </Card>
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button variant="outlined"><Link to={`/products/${item.id}`}>View</Link></Button>
+                <Button onClick={() => dispatch({ type: "ADD", payload: item })}>Add to cart</Button>
+              </CardActions>
+            </Card>
           )
-          
         })}
       </div>
-      
     </>
   )
 }

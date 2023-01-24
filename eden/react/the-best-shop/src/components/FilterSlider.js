@@ -1,5 +1,5 @@
-import {Box,Slider} from '@mui/material'
-import React,{useState} from 'react'
+import { Box, Slider } from '@mui/material';
+import React from 'react';
 
 function valuetext(value) {
   return `${value}$`;
@@ -13,16 +13,16 @@ const FilterSlider = ({rangePrice, setRangePrice}) => {
 
   return (
     <>
-        <Box sx={{ width: 300 }}>
-      <Slider
-        getAriaLabel={() => 'price range'}
-        value={rangePrice}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        getAriaValueText={valuetext}
-        max="1000"
-      />
-    </Box>
+      <Box sx={{ width: 300 }}>
+        <Slider
+          getAriaLabel={() => 'price range'}
+          value={rangePrice}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          getAriaValueText={valuetext}
+          max="1000"
+        />
+      </Box>
     </>
   );
 };
