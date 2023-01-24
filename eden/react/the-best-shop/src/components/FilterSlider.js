@@ -5,14 +5,10 @@ function valuetext(value) {
   return `${value}$`;
 };
 
-const FilterSlider = (props,onFilterChange) => {
-  const newpro= props.cats;
-  const money = newpro.map(p => p.price).filter((value, index, array) => array.indexOf(value) === index)
-
-  const [value, setValue] = useState([1, 150]);
+const FilterSlider = ({rangePrice, setRangePrice}) => {
  
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setRangePrice(newValue);
   };
 
   return (
@@ -20,7 +16,7 @@ const FilterSlider = (props,onFilterChange) => {
         <Box sx={{ width: 300 }}>
       <Slider
         getAriaLabel={() => 'price range'}
-        value={value}
+        value={rangePrice}
         onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}

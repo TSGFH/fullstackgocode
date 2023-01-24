@@ -3,14 +3,12 @@ import { Box,FormControl,InputLabel,Select,MenuItem } from '@mui/material'
 import React, {useState} from 'react'
 import { supa } from './Products'
 export let categories2 = ''
-const Filter = ({categories, onFilterChange}) => {
-  const [cat, setCat] = useState("All Products")
+const Filter = ({categories, onFilterChange, cat, setCat}) => {
   categories2 = categories = supa.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index)
   categories.unshift("All Products")
 
   const handleSelect = (e) => {
     setCat(e.target.value)
-    onFilterChange(e)
   }
   return (
     <>

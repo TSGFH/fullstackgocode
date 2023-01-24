@@ -15,7 +15,9 @@ const Products = () => {
    const [getPro, setGetPro]= useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading]= useState(false);
-  const [moneyp,setMoneyp]= useState([]);
+  const [rangePrice,setRangePrice]= useState([1,1000]);
+  const [cat, setCat] = useState("All Products")
+
   useEffect(() => {
     setLoading(true);
     axios({
@@ -29,29 +31,27 @@ const Products = () => {
       .finally(() => setLoading(false))
   }, [])
   supa = getPro
+  
+useEffect(()=>{onFilterChange()},[cat, rangePrice])
 
-  const onFilterChange = (e) => {
-  console.log(e.target.value)
-  if (e.target.value === "All Products") {
+  const onFilterChange = () => {
+  if (cat === "All Products") {
     console.log('got here')
-    setProducts(getPro)
+    setProducts(getPro.filter(t=> t.price >= rangePrice[0] && t.price <= rangePrice[1]))
   }else {
-    setProducts(getPro.filter(t => t.category === e.target.value))
-    if(e.target.value !== "All Products"){
-      setMoneyp(products.filter(t=>t.price === e.target.value))
-    }
+    const filteredProducts = getPro.filter(t => t.category === cat && t.price >= rangePrice[0] && t.price <= rangePrice[1])
+    setProducts(filteredProducts)
     }
   }
   const Globalstate = useContext(Cartcontext);
   const dispatch = Globalstate.dispatch;
-  console.log(Globalstate);
   return (
     <>
     <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
       <div className='filters fu'>
       <Button variant="outlined" onClick={() => setCartOpen(true)}><img width={50} height={50} src='https://cdn-icons-png.flaticon.com/512/263/263142.png' alt='' className='spacer'/></Button>
-      <Filter categories={categories2} onFilterChange={onFilterChange} />
-      <FilterSlider cats={products} onFilterChange={onFilterChange}/>
+      <Filter categories={categories2} onFilterChange={onFilterChange} cat={cat} setCat={setCat} />
+      <FilterSlider cats={products} onFilterChange={onFilterChange} rangePrice={rangePrice} setRangePrice={setRangePrice}/>
       </div>
       <>
         {loading && (
