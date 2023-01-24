@@ -12,14 +12,20 @@ const Data = () => {
             url:"https://fakestoreapi.com/products",
         })
             .then((res) => {
-                console.log(res.data);
                 setData(res.data);
             })
             .catch(e => console.log(e))
             .finally(() => setLoading(false))
 
-    },[])
-
+    }, [])
+    const Server = async () => {
+        const test1 = await fetch("http://127.0.0.1:8000/calculator")
+        const test2 = await test1.json()
+        console.log(test2);
+    }
+    useEffect(() => {
+        Server()
+    }, [])
   return (
       <div>
           {loading && (
