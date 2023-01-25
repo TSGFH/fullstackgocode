@@ -29,7 +29,7 @@ const Products = () => {
     }).catch((e) => console.log(e))
       .finally(() => setLoading(false))
   }, []);
-  
+
   useEffect(() => { onFilterChange() },[cat, rangePrice]);
 
   const onFilterChange = () => {
