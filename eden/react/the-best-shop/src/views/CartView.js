@@ -46,9 +46,9 @@ const CartView = () => {
           )
       })}
       <div className='testit'>
-        <span>SubTotal: {total}$</span>
-        <span>Tax:17%: {tax}$</span>
         {total > 0 && <div className='testit'>
+        <span>SubTotal: {total}$</span>
+          <span>Tax:17%: {tax}$</span>
           <span>Shipping:250$</span>
         <span>Total: {grandtotal}$</span>
           </div>}
