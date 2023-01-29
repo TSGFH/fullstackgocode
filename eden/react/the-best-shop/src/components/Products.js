@@ -21,7 +21,7 @@ const Products = () => {
     setLoading(true);
     axios({
       method: "GET",
-      url: "https://fakestoreapi.com/products",
+      url: "http://localhost:8000/api/products",
       
     }).then(res => {
       setGetPro(res.data)
@@ -29,7 +29,7 @@ const Products = () => {
     }).catch((e) => console.log(e))
       .finally(() => setLoading(false))
   }, []);
-
+  console.log(getPro);
   useEffect(() => { onFilterChange() },[cat, rangePrice]);
 
   const onFilterChange = () => {

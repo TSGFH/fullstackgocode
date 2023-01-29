@@ -23,7 +23,7 @@ const ProductsView = () => {
     fetchSingleProduct()
   }, [])
   return (
-    <div className='border'>
+    <div>
       {loading && (
         <div>
         {" "}
