@@ -1,31 +1,67 @@
 import express from "express";
 import cors from 'cors';
-import { Data } from "./data/Data.js";
-const MongoClient = require("mongodb").MongoClient;
+import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+dotenv.config();
+const {PORT,DB_USER,DB_PASS,DB_HOST,DB_NAME} = process.env;
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-var database;
-app.get('/api/calculator', async (req,res)=>{
-    res.send({message:"the asnwer is 10"});
+mongoose.set('strictQuery', true);
+
+const GetProducts = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    category: {
+        type: String,
+        required: true,
+    },
+    image: {
+        type: String,
+        required: true,
+    }
 });
 
-app.post('/api/test/testsupa', async (req,res)=>{
-    const example = {id:5, title:"supatest",};
-    const todo = {...req.body}
+const Products = mongoosge.model('Products', GetProducts);
 
-    Data.push(todo);
-    console.log(Data);
-    res.send(Data);
+app.get('/api/products', async (req,res)=>{
+    try {
+        const data = await Products.find({})
+        res.status(200).send(data)
+    } catch (e) {
+        console.log(e)
+        res.status(500).send({message:e})
+    }
 });
-
-app.listen(8000, ()=>{
-    console.log("i am listening on port 8000");
-    MongoClient.connect('mongodb://localhost:27017',{useNewUrlParser:true},(error,result)=>{
-        if(error) throw error
-        database = result.db('test');
-        console.log("it works");
+//
+mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+},(err)=>{
+    app.listen(PORT,()=>{
+        console.log('err',err);
+        console.log("i am listening on port " + PORT);
     });
 });
+
+// mongoose.connect("mongodb://127.0.0.1:27017", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
+
+// app.listen(PORT, ()=>{
+//     console.log("i am listening on port " + PORT);
+// });
