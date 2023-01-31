@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 
 
 sdijuyfgtaskjdf
+=======
+fsdikofsdgijkofsdgoijkfsdgoim
+>>>>>>> refs/remotes/origin/master
