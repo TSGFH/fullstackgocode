@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const { PORT } = process.env;
+const { PORT,DB_HOST,DB_NAME,DB_PASS,DB_USER } = process.env;
 
 const app = express();
 
@@ -48,8 +48,8 @@ app.get('/api/products', async (req, res) => {
     }
 
 }); 
-
-mongoose.connect("mongodb://127.0.0.1:27017", {
+//mongodb+srv://The_Satanic_Gamer_From_Hell:)J*f*r%40*98M4uvca@cluster0.tkne1bj.mongodb.net/test
+mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
