@@ -48,7 +48,6 @@ app.get('/api/products', async (req, res) => {
     }
 
 }); 
-//mongodb+srv://The_Satanic_Gamer_From_Hell:)J*f*r%40*98M4uvca@cluster0.tkne1bj.mongodb.net/test
 mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
